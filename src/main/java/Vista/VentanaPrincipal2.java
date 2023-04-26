@@ -36,7 +36,7 @@ public class VentanaPrincipal2 {
         panel3.add(boton);
         panel2.add(panel3);
 
-        panel1.add(new JLabel(new ImageIcon("src/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png")));
+        panel1.add(new JLabel(new ImageIcon("src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png")));
         panel.add(panel1);
         panel.add(panel2);
 

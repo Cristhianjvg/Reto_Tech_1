@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d96d57f-a636-4be9-ae88-f3a2a6fb6592" name="Changes" comment="actualizacion">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaAviso.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal3.java" afterDir="false" />
+    <list default="true" id="6d96d57f-a636-4be9-ae88-f3a2a6fb6592" name="Changes" comment="actualizacion final">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-06.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/Archivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controlador/Archivo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/RarExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controlador/RarExtractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/TextToPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controlador/TextToPDF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +45,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/Codigo-Reto-BL/Lambda/revisar este codigo/Reto_Tech_1",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -48,6 +53,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Usuario-Dell\IdeaProjects\Reto_Tech_1\src\main\java\Resources" />
       <recent name="C:\Users\Usuario-Dell\IdeaProjects\Reto_Tech_1\src\main\java\Vista" />
     </key>
   </component>
@@ -122,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682106647653</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="actualizacion final">
+      <created>1682115991512</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682115991512</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +151,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="actualizacion" />
-    <option name="LAST_COMMIT_MESSAGE" value="actualizacion" />
+    <MESSAGE value="actualizacion final" />
+    <option name="LAST_COMMIT_MESSAGE" value="actualizacion final" />
   </component>
 </project>

@@ -145,8 +145,6 @@ public class TextToPDF {
                         image.setFixedPosition(125, 350);
                         image.scale(1.3f, 1.3f);
 
-                        count++;
-
                         // Agregar la tabla y la imagen al documento y cerrarlo
                         //document.add(image);
                         document.add(table);
@@ -155,6 +153,7 @@ public class TextToPDF {
 
                     } catch (Exception e) {
                         count++;
+                        System.out.println("Error en creación");
                     }
                 } while (correct == false);
 

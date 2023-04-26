@@ -30,7 +30,7 @@ public class VentanaPrincipal3 extends JFrame { // Ventana para seleccionar la r
 
         //Paneles que se usaran para la distribución de los elementos en el programa
         JPanel panel1 = new JPanel();
-        panel1.add(new JLabel(new ImageIcon("src/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png")));
+        panel1.add(new JLabel(new ImageIcon("src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png")));
 
         JPanel panel2 = new JPanel(new GridLayout(2, 1));
         JPanel panel3 = new JPanel();
