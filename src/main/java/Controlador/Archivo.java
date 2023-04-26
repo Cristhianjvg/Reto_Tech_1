@@ -11,10 +11,12 @@ public class Archivo {
         System.out.println("Destino:   "+destino);
         System.out.println("Archivo:   "+nomArchivo);
 
-        String file = "C:\\Users\\Usuario-Dell\\Desktop\\RETO-NOMINA\\Pago nomina web 30-04-2023\\pago nomina web 30-04-2023.txt";
+        //String file = "C:\\Users\\Usuario-Dell\\Desktop\\RETO-NOMINA\\Pago nomina web 30-04-2023\\pago nomina web 30-04-2023.txt";
+        String file = directorioPadre+"\\"+nomArchivo+"\\"+nomArchivo+"\\"+nomArchivo+".txt";
+        System.out.println(file); // La ruta donde el archivo txt al descomprimir se encontrara
         String pasword = "C4SH_BL*@5$2Q4$";
-        System.out.println(ingreso);
-        /*RarExtractor unrar = new RarExtractor();
+
+        RarExtractor unrar = new RarExtractor();
         unrar.unRarFile(destino, ingreso, pasword);
         //ReadTxt txt = new ReadTxt();
         //txt.READTXT(file);
@@ -24,7 +26,7 @@ public class Archivo {
         String fileName = file;
 
         TextReader reader = new TextReader();
-        reader.readTxtFile(fileName);*/
+        reader.readTxtFile(fileName);
     }
 
 }

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class ReadTxt {
 
     public void READTXT(String rutatxt) {
-
+        int contador=0;
         try {
             // Ruta del archivo a leer
             File file = new File(rutatxt);
@@ -23,7 +23,8 @@ public class ReadTxt {
 
             scanner.close();
         } catch (Exception e) {
-            System.out.println("Ocurrió un error al leer el archivo: " + e.getMessage());
+            System.out.println(contador+" -- Ocurrió un error al leer el archivo: " + e.getMessage());
+            contador++;
         }
     }
 
