@@ -16,9 +16,9 @@ public class TextReader {
 
                 // Mostrar los valores de cada columna
                 for (String column : columns) {
-                    System.out.print(column + "\t");
+                    //System.out.print(column + "\t");
                 }
-                System.out.println(); // Nueva línea después de cada fila
+                //System.out.println(); // Nueva línea después de cada fila
             }
 
         } catch (IOException e) {

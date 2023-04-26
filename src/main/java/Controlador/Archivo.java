@@ -21,12 +21,12 @@ public class Archivo {
         //ReadTxt txt = new ReadTxt();
         //txt.READTXT(file);
         TextToPDF pdf = new TextToPDF();
-        pdf.pdf(destino, ingreso);
+        pdf.pdf(destino, file);
 
-        String fileName = file;
+        //String fileName = file;
 
-        TextReader reader = new TextReader();
-        reader.readTxtFile(fileName);
+        //TextReader reader = new TextReader();
+        //reader.readTxtFile(fileName);
     }
 
 }

@@ -17,7 +17,7 @@ public class ReadTxt {
             // Leer cada línea del archivo
             while (scanner.hasNextLine()) {
                 String line = scanner.nextLine();
-                System.out.println(line);
+                //System.out.println(line);
             }
             System.out.println("se leyo el txt correctamente");
 

@@ -26,7 +26,7 @@ public class RarExtractor {
                 if ("".equals(line1)) {
                     continue;
                 }
-                System.out.println(line1);
+                //System.out.println(line1);
             }
 
             bf.close();

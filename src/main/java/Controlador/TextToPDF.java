@@ -25,7 +25,7 @@ import java.util.Date;
 
 public class TextToPDF {
 
-    public void pdf (String targetPath, String absolutePath) {
+    public void pdf (String targetPath, String absolutePath) { // targetPath
 
         //String fileName = "C:\\Users\\Usuario-Dell\\Desktop\\Pruebas\\Pago nomina web 30-04-2023\\pago nomina web 30-04-2023.txt";
         //String outputDir = "C:\\Users\\Usuario-Dell\\Desktop\\RETO-NOMINA\\";
@@ -35,7 +35,7 @@ public class TextToPDF {
         String fileName = sub+"\\pago nomina web 30-04-2023.txt";
         String outputDir = targetPath+"\\";
 
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(absolutePath))) {
 
             // Leer la primera línea y establecerla como el nombre de la columna
             String columnName = br.readLine();
