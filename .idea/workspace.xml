@@ -7,7 +7,6 @@
     <list default="true" id="6d96d57f-a636-4be9-ae88-f3a2a6fb6592" name="Changes" comment="logotipos y actualizaciones generales">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/Archivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controlador/Archivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/ReadTxt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controlador/ReadTxt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +146,7 @@
       <workItem from="1682528628434" duration="3178000" />
       <workItem from="1682533538220" duration="471000" />
       <workItem from="1682534875181" duration="1225000" />
-      <workItem from="1682540788756" duration="3985000" />
+      <workItem from="1682540788756" duration="4864000" />
     </task>
     <task id="LOCAL-00001" summary="actualizacion">
       <created>1682106631930</created>
