@@ -9,12 +9,13 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class VentanaPrincipal3 extends JFrame { // Ventana para seleccionar la ruta para guardar los archivos PDF y mandar a procesar
 
     public String rutaPDFs = new String();
-    public String rutaIngreso;
+    public String rutaIngreso , nomArchivo;
     Archivo archivo;
 
-    public VentanaPrincipal3(String rutaIngreso , String guardadoDefault , String nomArchivo) throws HeadlessException {
+    public VentanaPrincipal3(String rutaIngreso, String guardadoDefault , String nomArchivo) throws HeadlessException {
         this.rutaIngreso = rutaIngreso;
-        //System.out.println("Llego a 3 :::: "+rutaIngreso);
+        this.rutaPDFs = guardadoDefault;
+        this.nomArchivo = nomArchivo;
 
         JFrame ventana = new JFrame("Seleccionar carpeta");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -67,7 +68,7 @@ public class VentanaPrincipal3 extends JFrame { // Ventana para seleccionar la r
 
         //Activador del boton 2 que mandara a iniciar el proceso de conversión de los PDF
         boton2.addActionListener(e -> {
-            archivo = new Archivo(rutaIngreso , rutaPDFs);
+            archivo = new Archivo(rutaIngreso , guardadoDefault , rutaPDFs , nomArchivo);
         });
 
         panel.add(panel1);

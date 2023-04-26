@@ -49,8 +49,6 @@ public class VentanaAviso extends JFrame {
 
 
         panel.add(informe);
-        //panel.add(resultado);
-        //panel.add(destino);
         panel.add(panel1);
 
         ventana.add(panel);
