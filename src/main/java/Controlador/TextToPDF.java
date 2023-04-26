@@ -26,13 +26,13 @@ import java.util.Date;
 public class TextToPDF {
 
     public void pdf (String targetPath, String absolutePath) { // targetPath
-
+        /*
         //String fileName = "C:\\Users\\Usuario-Dell\\Desktop\\Pruebas\\Pago nomina web 30-04-2023\\pago nomina web 30-04-2023.txt";
         //String outputDir = "C:\\Users\\Usuario-Dell\\Desktop\\RETO-NOMINA\\";
 
         String sub = absolutePath.substring(0, absolutePath.length() - 4);
         System.out.println(sub);
-        String fileName = sub+"\\pago nomina web 30-04-2023.txt";
+        String fileName = sub+"\\pago nomina web 30-04-2023.txt";*/
         String outputDir = targetPath+"\\";
 
         try (BufferedReader br = new BufferedReader(new FileReader(absolutePath))) {
@@ -47,8 +47,8 @@ public class TextToPDF {
 
             String[] miArray = {"BATCH", "NOMBRE DEL CLIENTE", "IDENTIFICACIÓN" , "CTA_DÉBITO", "COMISIÓN","NRO DE TRANSACCIÓN POR CUENTA", "APROBADORES ", "NOMBRE DEL BENEFICIARIO" , "IDENTIFICACIÓN DEL BENEFICIARIO", "INSTITUCIÓN FINANCIERA RECEPTORA","CUENTA DE CRÉDITO ", "VALOR ", "REFERENCIA DE TRANSACCIÓN" , "FECHA INGRESO", "FECHA APROBACIÓN","OBSERVACIONES ", "ESTADO TRANSACCIÓN" };
 
-
-            while ((columnName = br.readLine()) != null) {
+            int contador = 0;
+            while ((columnName = br.readLine()) != null /*&& contador < 300*/) {
                 // Crear una tabla con una única celda que contenga el texto de la línea actual
                 String line = columnName;
                 ArrayList<String> elementos = new ArrayList<>();
@@ -68,6 +68,7 @@ public class TextToPDF {
                     System.out.println(e);
                 }
 
+                System.out.println(contador);
                 //Crear un nuevo documento PDF
                 boolean correct = false;
                 int count = 0;
@@ -140,10 +141,10 @@ public class TextToPDF {
 
 
                         // Crear la imagen dentro del ciclo
-                        ImageData imageData = ImageDataFactory.create("C:\\\\Users\\\\Usuario-Dell\\\\Desktop\\\\RETO-NOMINA\\\\LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png");
+                        /*ImageData imageData = ImageDataFactory.create("C:\\\\Users\\\\Usuario-Dell\\\\Desktop\\\\RETO-NOMINA\\\\LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png");
                         Image image = new Image(imageData);
                         image.setFixedPosition(125, 350);
-                        image.scale(1.3f, 1.3f);
+                        image.scale(1.3f, 1.3f);*/
 
                         // Agregar la tabla y la imagen al documento y cerrarlo
                         //document.add(image);
@@ -154,13 +155,17 @@ public class TextToPDF {
                     } catch (Exception e) {
                         count++;
                         System.out.println("Error en creación");
+                        correct = true;
                     }
+                    break;
                 } while (correct == false);
 
-
+                contador++;
             }
+            System.out.println("Llego al final del while");
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("End the end");
         }
     }
 }
