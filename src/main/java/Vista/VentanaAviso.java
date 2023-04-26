@@ -11,13 +11,12 @@ public class VentanaAviso extends JFrame {
     public String mensaje = new String();
     public String rutaGuardado = new String();
 
-    public VentanaAviso(){ // Ventana para avisar al usuario el resultado de la conversión
-        mensaje = "Error";
+    public VentanaAviso(int correctos , int problema){ // Ventana para avisar al usuario el resultado de la conversión
         rutaGuardado = "C:\\Users\\JULY\\Documents\\Custom Production Presets 7.0";
         //Detalles de la ventana
         JFrame ventana = new JFrame(mensaje+" ...");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        ventana.setSize(400, 250);
+        ventana.setSize(400, 320);
         ventana.setLocationRelativeTo(null);
         ventana.setResizable(false);
 
@@ -25,41 +24,34 @@ public class VentanaAviso extends JFrame {
         JPanel panel = new JPanel(new GridLayout(2, 1));
         JLabel resultado = new JLabel();
         JLabel destino = new JLabel();
+        JTextArea informe = new JTextArea("\n- - RESULTADOS DE LA CONVERSIÓN - - - - - - -" +
+                "\n\n    Informes generados correctamente: "+correctos
+                +"\n    Informes con error:"+problema
+                +"\n\n    Los informes se han almacenado en:\n"+rutaGuardado);
 
-        //Condicional para especificar el resultado de la operación de conversión
-        if(mensaje.equals("Exitoso")){ // Se determina una interfaz especifica si la operación se ejecuta correctamente
-            resultado.setText("La operación ha sido ejecutada con exito");
-            destino.setText("Los PDFs generados se almacenaron en "+ rutaGuardado);
 
-            JButton abrir = new JButton("Mostrar en carpeta");
-            JPanel panel1 = new JPanel();
-            panel1.add(abrir);
+        resultado.setText("La operación ha sido ejecutada con exito");
+        destino.setText("Los PDFs generados se almacenaron en:\n"+ rutaGuardado);
+        System.out.println("fgrtg--------"+rutaGuardado);
 
-            abrir.addActionListener(e -> { //Creamos un action Listener para mostrar los PDF generados en el directorio del SO
-                // Se abre la carpeta directorio del SO con los PDFs ya generados
-                try {
-                    Desktop.getDesktop().open(new File(rutaGuardado));
-                } catch (IOException ex) {
-                    throw new RuntimeException(ex);
-                }
-            });
+        JButton abrir = new JButton("Mostrar en carpeta");
+        JPanel panel1 = new JPanel();
+        panel1.add(abrir);
 
-            panel.add(resultado);
-            panel.add(panel1);
-        } else { // Se genera una interfaz diferente si existe un error en la operación
-            resultado.setText("Operación Fallida, Lamentamos los inconvenientes");
-            JButton restauracion = new JButton("Volver a Intentarlo"); // Retorna a la ventana de inicio del programa
-            JPanel panel1 = new JPanel();
-            panel1.add(restauracion);
+        abrir.addActionListener(e -> { //Creamos un action Listener para mostrar los PDF generados en el directorio del SO
+                    // Se abre la carpeta directorio del SO con los PDFs ya generados
+                    try {
+                        Desktop.getDesktop().open(new File(rutaGuardado));
+                    } catch (IOException ex) {
+                        throw new RuntimeException(ex);
+                    }
+                });
 
-            restauracion.addActionListener(e -> {
-                VentanaPrincipal2 intento = new VentanaPrincipal2();
-                ventana.setVisible(false);
-            });
 
-            panel.add(resultado);
-            panel.add(panel1);
-        }
+        panel.add(informe);
+        //panel.add(resultado);
+        //panel.add(destino);
+        panel.add(panel1);
 
         ventana.add(panel);
         ventana.setVisible(true);
@@ -70,6 +62,6 @@ public class VentanaAviso extends JFrame {
     }
 
     public static void main (String [] args){
-        VentanaAviso ventana = new VentanaAviso();
+        VentanaAviso ventana = new VentanaAviso(3,5);
     }
 }

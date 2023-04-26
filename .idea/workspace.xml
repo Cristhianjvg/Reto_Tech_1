@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d96d57f-a636-4be9-ae88-f3a2a6fb6592" name="Changes" comment="logotipos y actualizaciones generales" />
+    <list default="true" id="6d96d57f-a636-4be9-ae88-f3a2a6fb6592" name="Changes" comment="logotipos y actualizaciones generales">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Vista/VentanaAviso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaAviso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal3.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -23,6 +31,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectId" id="2OjvbCV7ZdNTRNHWjGm6gjcvEBu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -33,7 +44,12 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/Codigo-Reto-BL/Lambda/revisar este codigo/Reto_Tech_1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -45,7 +61,7 @@
       <recent name="C:\Users\Usuario-Dell\IdeaProjects\Reto_Tech_1\src\main\java\Vista" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.VentanaPrincipal2">
+  <component name="RunManager" selected="Application.VentanaAviso">
     <configuration name="Archivo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controlador.Archivo" />
       <module name="Reto_Tech_1" />
@@ -72,6 +88,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VentanaAviso" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Vista.VentanaAviso" />
+      <module name="Reto_Tech_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VentanaPrincipal2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Vista.VentanaPrincipal2" />
       <module name="Reto_Tech_1" />
@@ -85,9 +114,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="VentanaPrincipal3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Vista.VentanaPrincipal3" />
+      <module name="Reto_Tech_1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Vista.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.VentanaAviso" />
         <item itemvalue="Application.VentanaPrincipal2" />
+        <item itemvalue="Application.VentanaPrincipal3" />
         <item itemvalue="Application.Archivo" />
         <item itemvalue="Application.TextToPDF" />
       </list>
@@ -101,6 +145,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1682086875855</updated>
+      <workItem from="1682528628434" duration="3178000" />
+      <workItem from="1682533538220" duration="471000" />
+      <workItem from="1682534875181" duration="1225000" />
+      <workItem from="1682540788756" duration="631000" />
     </task>
     <task id="LOCAL-00001" summary="actualizacion">
       <created>1682106631930</created>
@@ -132,6 +180,9 @@
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

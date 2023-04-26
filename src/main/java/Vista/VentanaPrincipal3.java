@@ -12,9 +12,9 @@ public class VentanaPrincipal3 extends JFrame { // Ventana para seleccionar la r
     public String rutaIngreso;
     Archivo archivo;
 
-    public VentanaPrincipal3(String rutaIngreso) throws HeadlessException {
+    public VentanaPrincipal3(String rutaIngreso , String guardadoDefault , String nomArchivo) throws HeadlessException {
         this.rutaIngreso = rutaIngreso;
-        System.out.println("Llego a 3");
+        //System.out.println("Llego a 3 :::: "+rutaIngreso);
 
         JFrame ventana = new JFrame("Seleccionar carpeta");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -23,8 +23,9 @@ public class VentanaPrincipal3 extends JFrame { // Ventana para seleccionar la r
         ventana.setResizable(false);
 
         //Detalles de los componentes a mostrar
-        JPanel panel = new JPanel(new GridLayout(2, 1));
-        JLabel rutaGuardado = new JLabel("Seleccione la carpeta de guardado");
+        JPanel panel = new JPanel(new GridLayout(2,1 ));
+        JLabel ruta = new JLabel("Carpeta de Destino\n");
+        JLabel rutaGuardado = new JLabel(guardadoDefault);
         JButton boton = new JButton("Seleccionar carpeta");
         JButton boton2 = new JButton("Convertir");
 
@@ -33,13 +34,16 @@ public class VentanaPrincipal3 extends JFrame { // Ventana para seleccionar la r
         panel1.add(new JLabel(new ImageIcon("src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png")));
 
         JPanel panel2 = new JPanel(new GridLayout(2, 1));
-        JPanel panel3 = new JPanel();
+        JPanel panel3 = new JPanel(new GridLayout(2, 1));
         JPanel panel4 = new JPanel();
+        JPanel panel5 = new JPanel();
+        JPanel panel6 = new JPanel();
 
-        rutaGuardado.setBounds(20,20,200,50);
-
-        panel3.add(rutaGuardado);
-        panel3.add(boton);
+        panel5.add(ruta);
+        panel6.add(rutaGuardado);
+        panel3.add(panel5);
+        panel3.add(panel6);
+        panel4.add(boton);
         panel4.add(boton2);
 
         panel2.add(panel3);
@@ -71,4 +75,5 @@ public class VentanaPrincipal3 extends JFrame { // Ventana para seleccionar la r
         ventana.add(panel);
         ventana.setVisible(true);
     }
+
 }

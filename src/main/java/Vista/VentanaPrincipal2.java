@@ -15,7 +15,7 @@ public class VentanaPrincipal2 {
     public static void main (String [] args) { // Ventana de carga del archivo .RAR a procesar
         //Ventana principal del programa y sus caracteristicas
         JFrame ventana = new JFrame("Cargar archivo RAR");
-        ventana.setSize(500, 260);
+        ventana.setSize(550, 280);
         ventana.setLocationRelativeTo(null);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setResizable(false);
@@ -51,10 +51,23 @@ public class VentanaPrincipal2 {
                 File archivoRAR = fileChooser.getSelectedFile();
                 String rutaArchivoRAR = archivoRAR.getAbsolutePath();
                 rutaIngreso = rutaArchivoRAR;
+                archivoRAR.getParentFile();
+                System.out.println(rutaIngreso +" -------- "+ archivoRAR.getName());
+
+                // Extraigo el nombre del archivo
+                String fileName = archivoRAR.getName();
+
+                int extensionIndex = fileName.lastIndexOf(".");
+                if (extensionIndex > 0) {
+                    fileName = fileName.substring(0, extensionIndex);
+                }
+
+                System.out.println("Nombre de archivo sin extensión: " + fileName);
+
                 etiqueta.setText("Archivo seleccionado: " + rutaArchivoRAR);
                 ventana.setVisible(false);
-                VentanaPrincipal3 destino = new VentanaPrincipal3(rutaIngreso); // Se abrira la ventana posterior para continuar el proces
-                System.out.println("LLega hasta aqui");
+                System.out.println();
+                VentanaPrincipal3 destino = new VentanaPrincipal3(rutaIngreso , archivoRAR.getParentFile().getPath() , fileName); // Se abrira la ventana posterior para continuar el proceso
             }
 
         });
