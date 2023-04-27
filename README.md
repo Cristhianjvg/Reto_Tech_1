@@ -2,15 +2,15 @@
 
 descripcion general del proyecto
 
-##Requerimientos previos:
+## Requerimientos previos:
 
 1. Winrar Instalado
 
 2. Java18 Instalado
 
-##Intalaciones de los Requerimientos previos:
+## Intalaciones de los Requerimientos previos:
 
-###WINRAR
+### WINRAR
 
 1.Abre tu navegador web y dirígete a la página oficial de descarga de WinRAR. Puedes hacerlo escribiendo "WinRAR" en la barra de búsqueda de Google y seleccionando el primer resultado que aparezca.
 
@@ -28,4 +28,4 @@ descripcion general del proyecto
 
 8.Una vez que la instalación se haya completado, haz clic en "Finalizar" para cerrar la ventana de instalación.
 
-###JAVA
+### JAVA
