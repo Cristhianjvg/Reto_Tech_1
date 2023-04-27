@@ -1,5 +1,7 @@
 package Controlador;
 
+import Vista.VentanaAviso;
+import Vista.VentanaPrincipal3;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.kernel.colors.ColorConstants;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -15,6 +17,7 @@ import com.itextpdf.io.image.ImageDataFactory;
 
 import javax.swing.text.StyleConstants;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -34,6 +37,9 @@ public class TextToPDF {
         System.out.println(sub);
         String fileName = sub+"\\pago nomina web 30-04-2023.txt";*/
         String outputDir = targetPath+"\\";
+        String errores = "";
+        int contador = 0;
+        int excepciones = 0;
 
         try (BufferedReader br = new BufferedReader(new FileReader(absolutePath))) {
 
@@ -47,8 +53,8 @@ public class TextToPDF {
 
             String[] miArray = {"BATCH", "NOMBRE DEL CLIENTE", "IDENTIFICACIÓN" , "CTA_DÉBITO", "COMISIÓN","NRO DE TRANSACCIÓN POR CUENTA", "APROBADORES ", "NOMBRE DEL BENEFICIARIO" , "IDENTIFICACIÓN DEL BENEFICIARIO", "INSTITUCIÓN FINANCIERA RECEPTORA","CUENTA DE CRÉDITO ", "VALOR ", "REFERENCIA DE TRANSACCIÓN" , "FECHA INGRESO", "FECHA APROBACIÓN","OBSERVACIONES ", "ESTADO TRANSACCIÓN" };
 
-            int contador = 0;
-            while ((columnName = br.readLine()) != null /*&& contador < 300*/) {
+
+            while ((columnName = br.readLine()) != null) {
                 // Crear una tabla con una única celda que contenga el texto de la línea actual
                 String line = columnName;
                 ArrayList<String> elementos = new ArrayList<>();
@@ -73,12 +79,22 @@ public class TextToPDF {
                 boolean correct = false;
                 int count = 0;
                 do {
-                    String pdfFileName = nombreSalida + ".pdf";
+                    String pdfFileName = "\\"+nombreSalida + ".pdf";
+                    String rutaCarpetas = outputDir+ elementos.get(0);
                     if(count>0){
                         pdfFileName = nombreSalida + count + ".pdf";
                     }
+
+                    File carpeta = new File(rutaCarpetas);
+                    if (!carpeta.exists()) {
+                        // Crea la carpeta y todas las carpetas padre necesarias
+                        carpeta.mkdirs();
+                    }
+
                     try {
-                        PdfWriter writer = new PdfWriter(outputDir + pdfFileName);
+                        //System.out.println(outputDir + pdfFileName);
+                        //System.out.println(rutaCarpetas+pdfFileName+"\n");
+                        PdfWriter writer = new PdfWriter(rutaCarpetas+pdfFileName);
                         PdfDocument pdfDoc = new PdfDocument(writer);
                         Document document = new Document(pdfDoc);
                         correct = true;
@@ -141,13 +157,13 @@ public class TextToPDF {
 
 
                         // Crear la imagen dentro del ciclo
-                        /*ImageData imageData = ImageDataFactory.create("C:\\\\Users\\\\Usuario-Dell\\\\Desktop\\\\RETO-NOMINA\\\\LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png");
+                        ImageData imageData = ImageDataFactory.create("src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png");
                         Image image = new Image(imageData);
                         image.setFixedPosition(125, 350);
-                        image.scale(1.3f, 1.3f);*/
+                        image.scale(1.3f, 1.3f);
 
                         // Agregar la tabla y la imagen al documento y cerrarlo
-                        //document.add(image);
+                        document.add(image);
                         document.add(table);
 
                         document.close();
@@ -155,6 +171,8 @@ public class TextToPDF {
                     } catch (Exception e) {
                         count++;
                         System.out.println("Error en creación");
+                        errores += line+"\n";
+                        excepciones++;
                         correct = true;
                     }
                     break;
@@ -167,6 +185,8 @@ public class TextToPDF {
             e.printStackTrace();
             System.out.println("End the end");
         }
+        System.out.println(errores);
+        VentanaAviso reporte = new VentanaAviso(contador-excepciones , excepciones , targetPath );
     }
 }
 

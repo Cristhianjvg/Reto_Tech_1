@@ -11,8 +11,8 @@ public class VentanaAviso extends JFrame {
     public String mensaje = new String();
     public String rutaGuardado = new String();
 
-    public VentanaAviso(int correctos , int problema){ // Ventana para avisar al usuario el resultado de la conversión
-        rutaGuardado = "C:\\Users\\JULY\\Documents\\Custom Production Presets 7.0";
+    public VentanaAviso(int correctos , int problema , String rutaGuardado){ // Ventana para avisar al usuario el resultado de la conversión
+        this.rutaGuardado = rutaGuardado;
         //Detalles de la ventana
         JFrame ventana = new JFrame(mensaje+" ...");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -59,7 +59,4 @@ public class VentanaAviso extends JFrame {
         this.mensaje = mensaje;
     }
 
-    public static void main (String [] args){
-        VentanaAviso ventana = new VentanaAviso(3,5);
-    }
 }
