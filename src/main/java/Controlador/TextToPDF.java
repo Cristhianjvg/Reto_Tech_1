@@ -15,6 +15,7 @@ import com.itextpdf.layout.properties.TextAlignment;
 
 import com.itextpdf.io.image.ImageDataFactory;
 
+import javax.swing.*;
 import javax.swing.text.StyleConstants;
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -26,11 +27,13 @@ import java.util.Date;
 
 public class TextToPDF {
 
-    public void pdf (String targetPath, String absolutePath) { // targetPath
+    public void pdf (String targetPath, String absolutePath , VentanaPrincipal3 progreso) { // targetPath
         String outputDir = targetPath+"\\";
         String errores = "";
         int contador = 0;
         int excepciones = 0;
+        float avance = 0;
+        String espacio = "";
 
         try (BufferedReader br = new BufferedReader(new FileReader(absolutePath))) {
 
@@ -44,6 +47,7 @@ public class TextToPDF {
 
             String[] miArray = {"BATCH", "NOMBRE DEL CLIENTE", "IDENTIFICACIÓN" , "CTA_DÉBITO", "COMISIÓN","NRO DE TRANSACCIÓN POR CUENTA", "APROBADORES ", "NOMBRE DEL BENEFICIARIO" , "IDENTIFICACIÓN DEL BENEFICIARIO", "INSTITUCIÓN FINANCIERA RECEPTORA","CUENTA DE CRÉDITO ", "VALOR ", "REFERENCIA DE TRANSACCIÓN" , "FECHA INGRESO", "FECHA APROBACIÓN","OBSERVACIONES ", "ESTADO TRANSACCIÓN" };
 
+            BarraDeProgreso barra = new BarraDeProgreso();
 
             while ((columnName = br.readLine()) != null) {
                 // Crear una tabla con una única celda que contenga el texto de la línea actual
@@ -61,7 +65,7 @@ public class TextToPDF {
                     System.out.println(e);
                 }
 
-                System.out.println(contador); // Controlador para ir analizando si se generan los PDFs
+                //System.out.println(contador); // Controlador para ir analizando si se generan los PDFs
 
                 //Crear un nuevo documento PDF---------------------------------------------------
                 boolean correct = false;
@@ -108,9 +112,15 @@ public class TextToPDF {
 
 
                         // Crear un estilo para el texto
-                        Style estiloTexto = new Style()
+                        Style estiloTextop = new Style()
                                 //.setFont(PdfFontFactory.createFont(StyleConstants.FontConstants.HELVETICA))
-                                .setFontSize(12)
+                                .setFontSize(9)
+                                .setFontColor(ColorConstants.BLACK);
+
+                        // Crear un estilo para el texto
+                        Style estiloTextop1 = new Style()
+                                //.setFont(PdfFontFactory.createFont(StyleConstants.FontConstants.HELVETICA))
+                                .setFontSize(11)
                                 .setFontColor(ColorConstants.BLACK);
 
                         // Agregar título al documento
@@ -128,13 +138,18 @@ public class TextToPDF {
                                 .setFontSize(14).setBold();
                         document.add(pSubtitulo2);
 
+                        //agregar un espacio
+                        Paragraph esp = new Paragraph(espacio).setTextAlignment(TextAlignment.CENTER)
+                                .setFontSize(14).setBold();
+                        document.add(esp);
+
 
                         // Crear una tabla con una única celda que contenga el texto de la línea actual
                         Table table = new Table(2);
                         int x = 0;
                         for (String element : elementos) {
-                            Paragraph p = new Paragraph(element).addStyle(estiloTexto);
-                            Paragraph p1 = new Paragraph(miArray[x]).addStyle(estiloTexto);
+                            Paragraph p = new Paragraph(element).addStyle(estiloTextop);
+                            Paragraph p1 = new Paragraph(miArray[x]).addStyle(estiloTextop1);
                             Cell cell1 = new Cell().add(p1).setTextAlignment(TextAlignment.CENTER);
                             Cell cell2 = new Cell().add(p).setTextAlignment(TextAlignment.CENTER);
                             table.addCell(cell1);
@@ -143,13 +158,20 @@ public class TextToPDF {
                         }
 
 
-                        // Crear la imagen dentro del ciclo
+                        //crear la imagen del encabezado dentro del ciclo
+                        ImageData logoData = ImageDataFactory.create("src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-03.png");
+                        Image encabezado = new Image(logoData);
+                        encabezado.setFixedPosition(320, 765);
+                        encabezado.scale(0.5f, 0.5f);
+
+                        // Crear la imagen de fondo dentro del ciclo
                         ImageData imageData = ImageDataFactory.create("src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png");
                         Image image = new Image(imageData);
                         image.setFixedPosition(125, 350);
                         image.scale(1.3f, 1.3f);
 
                         // Agregar la tabla y la imagen al documento y cerrarlo
+                        document.add(encabezado);
                         document.add(image);
                         document.add(table);
 
@@ -166,6 +188,9 @@ public class TextToPDF {
                 } while (correct == false);
 
                 contador++;
+                avance += 0.05f;
+                int auxi = (int)avance;
+                barra.actualizarBarra(contador);
             }
         } catch (Exception e) {
             e.printStackTrace();

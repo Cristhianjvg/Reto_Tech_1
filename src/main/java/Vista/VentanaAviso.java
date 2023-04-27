@@ -8,14 +8,13 @@ import java.io.IOException;
 
 public class VentanaAviso extends JFrame {
 
-    public String mensaje = new String();
     public String rutaGuardado = new String();
 
     public VentanaAviso(int correctos , int problema , String rutaGuardado){ // Ventana para avisar al usuario el resultado de la conversión
         this.rutaGuardado = rutaGuardado;
 
         //Detalles de la ventana--------------------------------------------------------------------------------
-        JFrame ventana = new JFrame(mensaje+" ...");
+        JFrame ventana = new JFrame("Resultado de la Operación");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         ventana.setSize(400, 320);
         ventana.setLocationRelativeTo(null);

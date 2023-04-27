@@ -15,7 +15,7 @@ public class VentanaPrincipal2 {
     public static void main (String [] args) { // Ventana de carga del archivo .RAR a procesar-------------------------
 
         //Ventana principal del programa y sus caracteristicas
-        JFrame ventana = new JFrame("Cargar archivo RAR");
+        JFrame ventana = new JFrame("SECD v1.1 Carga de RAR");
         ventana.setSize(550, 280);
         ventana.setLocationRelativeTo(null);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

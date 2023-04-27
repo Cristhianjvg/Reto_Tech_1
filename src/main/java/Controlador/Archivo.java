@@ -1,10 +1,15 @@
 package Controlador;
 
 import Vista.VentanaPrincipal2;
+import Vista.VentanaPrincipal3;
+
+import javax.swing.*;
 
 public class Archivo {
 
-    public Archivo(String ingreso , String directorioPadre, String destino , String nomArchivo) {
+    public VentanaPrincipal3 porcentaje;
+    public Archivo(String ingreso , String directorioPadre, String destino , String nomArchivo , VentanaPrincipal3 porcentaje) {
+        this.porcentaje = porcentaje;
 
         // Imprimir en pantalla las rutas para control de las direcciones tanto de ingreso como exportación
         System.out.println("Ingreso:   "+ingreso);
@@ -22,7 +27,7 @@ public class Archivo {
 
         //Generación de los PDFs una vez ya extraido el archivo .txt---------------------------
         TextToPDF pdf = new TextToPDF();
-        pdf.pdf(destino, file);
+        pdf.pdf(destino, file , porcentaje);
 
     }
 
