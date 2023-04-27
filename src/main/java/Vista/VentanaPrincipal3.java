@@ -17,20 +17,21 @@ public class VentanaPrincipal3 extends JFrame { // Ventana para seleccionar la r
         this.rutaPDFs = guardadoDefault;
         this.nomArchivo = nomArchivo;
 
+        //Ventana principal del programa y sus caracteristicas------------------------------------------------
         JFrame ventana = new JFrame("Seleccionar carpeta");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         ventana.setSize(450, 470);
         ventana.setLocationRelativeTo(null);
         ventana.setResizable(false);
 
-        //Detalles de los componentes a mostrar
+        //Detalles de los componentes a mostrar-----------------------------------------------------------------
         JPanel panel = new JPanel(new GridLayout(2,1 ));
         JLabel ruta = new JLabel("Carpeta de Destino\n");
         JLabel rutaGuardado = new JLabel(guardadoDefault);
         JButton boton = new JButton("Seleccionar carpeta");
         JButton boton2 = new JButton("Convertir");
 
-        //Paneles que se usaran para la distribución de los elementos en el programa
+        //Paneles que se usaran para la distribución de los elementos en el programa-----------------------------
         JPanel panel1 = new JPanel();
         panel1.add(new JLabel(new ImageIcon("src/main/java/Resources/LOGOTIPO INSTITUCIONAL SIMPLIFICADO HORIZONTAL Y VERTICAL-05.png")));
 
@@ -50,7 +51,7 @@ public class VentanaPrincipal3 extends JFrame { // Ventana para seleccionar la r
         panel2.add(panel3);
         panel2.add(panel4);
 
-        //Activador del boton que ejecutara la función de mostrar un gestor de carpetas para seleccionar la carpeta destino donde se guardaran los PDF
+        //Activador del boton que ejecutara la función de mostrar un gestor de carpetas para seleccionar la carpeta destino donde se guardaran los PDF----
         boton.addActionListener(e -> {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setDialogTitle("Seleccionar carpeta");
@@ -66,7 +67,7 @@ public class VentanaPrincipal3 extends JFrame { // Ventana para seleccionar la r
             }
         });
 
-        //Activador del boton 2 que mandara a iniciar el proceso de conversión de los PDF
+        //Activador del boton 2 que mandara a iniciar el proceso de conversión de los PDF-----------------------------
         boton2.addActionListener(e -> {
             archivo = new Archivo(rutaIngreso , guardadoDefault , rutaPDFs , nomArchivo);
         });

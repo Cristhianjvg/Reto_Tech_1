@@ -16,9 +16,7 @@ import com.itextpdf.layout.properties.TextAlignment;
 import com.itextpdf.io.image.ImageDataFactory;
 
 import javax.swing.text.StyleConstants;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -29,13 +27,6 @@ import java.util.Date;
 public class TextToPDF {
 
     public void pdf (String targetPath, String absolutePath) { // targetPath
-        /*
-        //String fileName = "C:\\Users\\Usuario-Dell\\Desktop\\Pruebas\\Pago nomina web 30-04-2023\\pago nomina web 30-04-2023.txt";
-        //String outputDir = "C:\\Users\\Usuario-Dell\\Desktop\\RETO-NOMINA\\";
-
-        String sub = absolutePath.substring(0, absolutePath.length() - 4);
-        System.out.println(sub);
-        String fileName = sub+"\\pago nomina web 30-04-2023.txt";*/
         String outputDir = targetPath+"\\";
         String errores = "";
         int contador = 0;
@@ -63,10 +54,6 @@ public class TextToPDF {
                     elementos.add(element.trim()); // agregar cada elemento al arreglo
                 }
 
-                /*for (String element : elementos) {
-                    System.out.println(element);
-                }*/
-
                 String nombreSalida = new String();
                 try {
                     nombreSalida = elementos.get(0) + " " + elementos.get(7);
@@ -74,8 +61,9 @@ public class TextToPDF {
                     System.out.println(e);
                 }
 
-                System.out.println(contador);
-                //Crear un nuevo documento PDF
+                System.out.println(contador); // Controlador para ir analizando si se generan los PDFs
+
+                //Crear un nuevo documento PDF---------------------------------------------------
                 boolean correct = false;
                 int count = 0;
                 do {
@@ -92,19 +80,18 @@ public class TextToPDF {
                     }
 
                     try {
-                        //System.out.println(outputDir + pdfFileName);
-                        //System.out.println(rutaCarpetas+pdfFileName+"\n");
                         PdfWriter writer = new PdfWriter(rutaCarpetas+pdfFileName);
                         PdfDocument pdfDoc = new PdfDocument(writer);
                         Document document = new Document(pdfDoc);
                         correct = true;
 
-                        // Obtener la fecha y hora actual
+                        // Obtener la fecha y hora actual------------------------------------------------
                         LocalDateTime now = LocalDateTime.now();
                         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy/MM/dd HH:mm:ss");
                         String fechaHoraActual = now.format(formatter);
 
-                        // Crear el texto con la fecha y hora actual
+                        //COMIENZA EL FORMATEADO PARA EL PDF Y SU CREACIÓN---------------------------------
+                        // Crear el texto con la fecha y hora actual---------------------------------------
                         Paragraph fecha = new Paragraph("Fecha de Impresión: " + fechaHoraActual);
                         fecha.setFontSize(8f);
                         fecha.setHorizontalAlignment(HorizontalAlignment.RIGHT);
@@ -112,7 +99,7 @@ public class TextToPDF {
                                                         
                                 """);
 
-                        // Agregar el texto al encabezado alineado a la derecha
+                        // Agregar el texto al encabezado alineado a la derecha ----------------------------
 
                         fecha.setWidth(pdfDoc.getDefaultPageSize().getWidth() - 72);
                         //Cell cell = new Cell().add(fecha).setHorizontalAlignment(HorizontalAlignment.RIGHT);
@@ -168,7 +155,7 @@ public class TextToPDF {
 
                         document.close();
 
-                    } catch (Exception e) {
+                    } catch (Exception e) { // En este apartado se genera el control de las excepciones ---------------
                         count++;
                         System.out.println("Error en creación");
                         errores += line+"\n";
@@ -180,12 +167,24 @@ public class TextToPDF {
 
                 contador++;
             }
-            System.out.println("Llego al final del while");
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("End the end");
         }
+
         System.out.println(errores);
+
+        // Se crea un .txt con las excepciones para poder controlarlas manualmente----------------------------
+        try{
+            FileWriter rExcepciones = new FileWriter(targetPath+"\\Excepciones.txt");
+            rExcepciones.write(errores);
+            rExcepciones.close();
+            System.out.println("El archivo se ha creado correctamente.");
+        }catch (IOException e){
+            System.err.println("Error al crear el archivo: " + e.getMessage());
+        }
+
+        // Se genera una ventana que avise el resultado de la descompresión ----------------------------------
         VentanaAviso reporte = new VentanaAviso(contador-excepciones , excepciones , targetPath );
     }
 }

@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="6d96d57f-a636-4be9-ae88-f3a2a6fb6592" name="Changes" comment="logotipos y actualizaciones generales">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/Archivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controlador/Archivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/RarExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controlador/RarExtractor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/ReadTxt.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/TextReader.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controlador/TextToPDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controlador/TextToPDF.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Vista/VentanaAviso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaAviso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Vista/VentanaPrincipal3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,21 +45,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Codigo-Reto-BL/Lambda/revisar este codigo/Reto_Tech_1&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Codigo-Reto-BL/Lambda/revisar este codigo/Reto_Tech_1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Usuario-Dell\IdeaProjects\Reto_Tech_1\src\main\java\Resources" />
@@ -149,6 +156,9 @@
       <workItem from="1682534875181" duration="1225000" />
       <workItem from="1682540788756" duration="11776000" />
       <workItem from="1682554615957" duration="2563000" />
+      <workItem from="1682558367058" duration="401000" />
+      <workItem from="1682565932178" duration="1337000" />
+      <workItem from="1682605191418" duration="2094000" />
     </task>
     <task id="LOCAL-00001" summary="actualizacion">
       <created>1682106631930</created>

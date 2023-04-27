@@ -13,14 +13,15 @@ public class VentanaAviso extends JFrame {
 
     public VentanaAviso(int correctos , int problema , String rutaGuardado){ // Ventana para avisar al usuario el resultado de la conversión
         this.rutaGuardado = rutaGuardado;
-        //Detalles de la ventana
+
+        //Detalles de la ventana--------------------------------------------------------------------------------
         JFrame ventana = new JFrame(mensaje+" ...");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         ventana.setSize(400, 320);
         ventana.setLocationRelativeTo(null);
         ventana.setResizable(false);
 
-        //Paneles que se usaran para la distribución de los elementos en el programa
+        //Paneles que se usaran para la distribución de los elementos en el programa------------------------------
         JPanel panel = new JPanel(new GridLayout(2, 1));
         JLabel resultado = new JLabel();
         JLabel destino = new JLabel();
@@ -53,10 +54,6 @@ public class VentanaAviso extends JFrame {
 
         ventana.add(panel);
         ventana.setVisible(true);
-    }
-
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
     }
 
 }
